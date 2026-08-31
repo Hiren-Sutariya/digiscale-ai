@@ -40,3 +40,7 @@ export const RollingText: React.FC<RollingTextProps> = ({ text, className = '' }
     </span>
   );
 };
+
+export const RollingTextDark: React.FC<RollingTextProps> = ({ text, className = '' }) => {
+  return <RollingText text={text} className={className} />;
+};

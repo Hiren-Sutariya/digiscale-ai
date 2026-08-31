@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { RollingText } from '@/components/ui/RollingText';
 import { 
   ShoppingBag, 
   MessageSquare, 
@@ -200,7 +201,7 @@ export default function AutomationsPage() {
           </span>
         </div>
 
-        {/* Split Header (Left Title on SINGLE LINE + Right Description) */}
+        {/* Split Header */}
         <div className="pt-8 pb-8 px-6 sm:px-10">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
             <h1 className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[38px] font-normal sm:font-medium tracking-tight text-neutral-900 leading-snug shrink-0">
@@ -284,14 +285,14 @@ export default function AutomationsPage() {
                   </p>
                 </div>
 
-                {/* Card Bottom CTA Link */}
+                {/* Card Bottom CTA Link with Signature RollingText */}
                 <div className="pt-4 border-t border-neutral-100 flex items-center justify-between">
                   <span className="text-xs font-medium text-neutral-600">Ready to Deploy</span>
                   <Link
                     href="/request-automation"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-900 hover:text-black group-hover:translate-x-0.5 transition-transform"
+                    className="group relative overflow-hidden inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-900 hover:text-black transition-colors"
                   >
-                    <span>Request Setup</span>
+                    <RollingText text="Request Setup" />
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>

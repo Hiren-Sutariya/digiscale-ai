@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { RollingText } from '@/components/ui/RollingText';
 import { ChevronDown, HelpCircle, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -119,9 +120,9 @@ export const FAQSection: React.FC = () => {
             </div>
             <Link
               href="/request-automation"
-              className="inline-flex items-center gap-2 px-6 py-2.5 bg-black text-white text-xs font-medium hover:bg-neutral-800 transition-colors shrink-0 shadow-2xs"
+              className="group relative overflow-hidden inline-flex items-center gap-2 px-6 py-2.5 bg-black text-white border border-black text-xs font-medium hover:bg-neutral-800 transition-colors shrink-0 shadow-2xs"
             >
-              <span>Schedule Workflow Audit</span>
+              <RollingText text="Schedule Workflow Audit" />
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

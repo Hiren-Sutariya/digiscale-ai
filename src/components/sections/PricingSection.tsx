@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { RollingText } from '@/components/ui/RollingText';
 import { Check, Minus, ChevronDown, ChevronUp } from 'lucide-react';
 
 export const PricingSection: React.FC = () => {
@@ -90,7 +91,7 @@ export const PricingSection: React.FC = () => {
   ];
 
   return (
-    <section id="pricing" className="w-full bg-white select-text">
+    <section id="pricing" className="w-full bg-white select-text scroll-mt-28">
       
       {/* Pattern Bar Divider Row */}
       <div className="max-w-[1340px] mx-auto py-1">
@@ -202,17 +203,17 @@ export const PricingSection: React.FC = () => {
                     ))}
                   </div>
 
-                  {/* Card CTA Button */}
+                  {/* Card CTA Button with Signature RollingText */}
                   <div className="pt-2">
                     <Link
                       href="/request-automation"
-                      className={`w-full py-3 block text-center text-xs sm:text-sm font-medium transition-colors border shadow-2xs ${
+                      className={`group relative overflow-hidden w-full py-3 inline-flex items-center justify-center text-xs sm:text-sm font-medium transition-colors border shadow-2xs ${
                         plan.popular
                           ? 'bg-black text-white hover:bg-neutral-800 border-black'
                           : 'bg-white text-neutral-900 border-neutral-200 hover:bg-neutral-50'
                       }`}
                     >
-                      {plan.buttonText}
+                      <RollingText text={plan.buttonText} />
                     </Link>
                   </div>
                 </div>
@@ -221,7 +222,7 @@ export const PricingSection: React.FC = () => {
             ))}
           </div>
 
-          {/* Collapsible Feature Comparison Matrix (Collapsed by Default) */}
+          {/* Collapsible Feature Comparison Matrix */}
           <div className="max-w-5xl mx-auto border border-neutral-200 bg-white shadow-2xs">
             
             {/* Matrix Header Bar */}

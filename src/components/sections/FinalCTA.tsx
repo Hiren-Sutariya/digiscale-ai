@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { RollingText, RollingTextDark } from '@/components/ui/RollingText';
 import { ArrowRight, CheckCircle2, Sparkles, Calendar } from 'lucide-react';
 
 export const FinalCTA: React.FC = () => {
@@ -60,9 +61,9 @@ export const FinalCTA: React.FC = () => {
 
               <Link
                 href="/request-automation"
-                className="w-full py-3 bg-black text-white text-xs sm:text-sm font-medium hover:bg-neutral-800 transition-colors inline-flex items-center justify-center gap-2 shadow-2xs"
+                className="group relative overflow-hidden w-full py-3 bg-black text-white border border-black text-xs sm:text-sm font-medium hover:bg-neutral-800 transition-colors inline-flex items-center justify-center gap-2 shadow-2xs"
               >
-                <span>Start Building Free</span>
+                <RollingText text="Start Building Free" />
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -85,9 +86,9 @@ export const FinalCTA: React.FC = () => {
 
               <Link
                 href="/request-automation"
-                className="w-full py-3 bg-white border border-neutral-300 text-neutral-900 text-xs sm:text-sm font-medium hover:bg-neutral-100 transition-colors inline-flex items-center justify-center gap-2 shadow-2xs"
+                className="group relative overflow-hidden w-full py-3 bg-white border border-neutral-300 text-neutral-900 text-xs sm:text-sm font-medium hover:bg-neutral-100 transition-colors inline-flex items-center justify-center gap-2 shadow-2xs"
               >
-                <span>Book 1-on-1 Audit</span>
+                <RollingTextDark text="Book 1-on-1 Audit" />
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

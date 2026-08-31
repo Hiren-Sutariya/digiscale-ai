@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { SunburstIcon } from '@/components/ui/SunburstIcon';
+import { RollingText, RollingTextDark } from '@/components/ui/RollingText';
 import { CheckCircle2, ArrowRight, Mail, MapPin, Check } from 'lucide-react';
 
 export default function RequestAutomationPage() {
@@ -128,15 +129,15 @@ export default function RequestAutomationPage() {
                   <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
                     <Link
                       href="/automations"
-                      className="px-6 py-2.5 bg-black text-white text-xs font-medium hover:bg-neutral-800 transition-colors shadow-2xs"
+                      className="group relative overflow-hidden px-6 py-2.5 bg-black text-white text-xs font-medium border border-black hover:bg-neutral-800 transition-colors shadow-2xs"
                     >
-                      Explore Automations Catalog →
+                      <RollingText text="Explore Automations Catalog" />
                     </Link>
                     <Link
                       href="/"
-                      className="px-6 py-2.5 bg-white border border-neutral-300 text-neutral-800 text-xs font-medium hover:bg-neutral-100 transition-colors shadow-2xs"
+                      className="group relative overflow-hidden px-6 py-2.5 bg-white border border-neutral-300 text-neutral-800 text-xs font-medium hover:bg-neutral-100 transition-colors shadow-2xs"
                     >
-                      Return to Homepage
+                      <RollingTextDark text="Return to Homepage" />
                     </Link>
                   </div>
                 </div>
@@ -198,13 +199,13 @@ export default function RequestAutomationPage() {
                     />
                   </div>
 
-                  {/* Submit Button */}
+                  {/* Submit Button with Signature RollingText */}
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full py-3.5 bg-black text-white text-xs sm:text-sm font-medium hover:bg-neutral-800 transition-colors inline-flex items-center justify-center gap-2 shadow-2xs"
+                      className="group relative overflow-hidden w-full py-3.5 bg-black text-white border border-black text-xs sm:text-sm font-medium hover:bg-neutral-800 transition-colors inline-flex items-center justify-center gap-2 shadow-2xs"
                     >
-                      <span>Submit Request</span>
+                      <RollingText text="Submit Request" />
                       <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>

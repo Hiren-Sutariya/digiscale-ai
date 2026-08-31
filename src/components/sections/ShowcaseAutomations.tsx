@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { RollingText } from '@/components/ui/RollingText';
 import { 
   ShoppingBag, 
   MessageSquare, 
@@ -245,9 +246,9 @@ export const ShowcaseAutomations: React.FC = () => {
             </div>
             <Link
               href="/automations"
-              className="inline-flex items-center gap-2 px-6 py-2.5 bg-black text-white text-xs font-medium hover:bg-neutral-800 transition-colors shrink-0"
+              className="group relative overflow-hidden inline-flex items-center gap-2 px-6 py-2.5 bg-black text-white border border-black text-xs font-medium hover:bg-neutral-800 transition-colors shrink-0 shadow-2xs"
             >
-              <span>View Full Automation Catalog</span>
+              <RollingText text="View Full Automation Catalog" />
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
