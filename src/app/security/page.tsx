@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import Link from 'next/link';
-import { ShieldCheck, Lock, Key, Server, Cpu, CheckCircle2, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Lock, Key, Server, Cpu, CheckCircle2 } from 'lucide-react';
 
 export default function SecurityPage() {
   useEffect(() => {
@@ -30,40 +29,42 @@ export default function SecurityPage() {
           </span>
         </div>
 
-        {/* Header Content */}
-        <div className="pt-10 pb-12 px-6 sm:px-10 border-b border-neutral-200">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 border border-emerald-200 text-xs font-semibold text-emerald-800">
+        {/* Centered Header Content */}
+        <div className="pt-12 pb-14 px-6 sm:px-10 border-b border-neutral-200 text-center">
+          <div className="max-w-3xl mx-auto space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 border border-emerald-200 text-xs font-semibold text-emerald-800 mx-auto">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
               <span>Verified Audit Status: SOC-2 Type II Compliant</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-normal sm:font-medium tracking-tight text-neutral-900 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-neutral-900 leading-tight">
               Enterprise Security Architecture
             </h1>
-            <p className="text-sm text-neutral-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed max-w-2xl mx-auto">
               DIGISCALE AI is engineered from the ground up for high-security enterprise environments. Our infrastructure adheres to strict SOC-2 Type II security principles, zero-trust network policies, and continuous vulnerability monitoring.
             </p>
           </div>
         </div>
 
-        {/* 4 Pillars Security Cards Grid */}
-        <div className="p-6 sm:p-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        {/* Centered Body Content */}
+        <div className="py-14 px-6 sm:px-10 max-w-4xl mx-auto space-y-12">
+          
+          {/* 4 Pillars Security Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
-            <div className="p-6 sm:p-8 border border-neutral-200 bg-white space-y-4 shadow-2xs">
-              <div className="w-10 h-10 rounded-full bg-neutral-100 border border-neutral-300 flex items-center justify-center text-neutral-900">
+            <div className="p-6 sm:p-8 border border-neutral-200 bg-white space-y-4 text-center shadow-2xs">
+              <div className="w-10 h-10 rounded-full bg-neutral-100 border border-neutral-300 flex items-center justify-center mx-auto text-neutral-900">
                 <Lock className="w-5 h-5 stroke-[1.8]" />
               </div>
               <h3 className="text-base sm:text-lg font-semibold text-neutral-900">
                 AES-256 Data Encryption
               </h3>
               <p className="text-xs sm:text-sm font-normal text-neutral-600 leading-relaxed">
-                All data in transit is encrypted using TLS 1.3 with strict HSTS policies. Data at rest is encrypted via AES-256 with automated key rotation managed through AWS KMS.
+                All data in transit is encrypted using TLS 1.3 with strict HSTS policies. Data at rest is encrypted via AES-256 with automated key rotation managed through KMS.
               </p>
             </div>
 
-            <div className="p-6 sm:p-8 border border-neutral-200 bg-white space-y-4 shadow-2xs">
-              <div className="w-10 h-10 rounded-full bg-neutral-100 border border-neutral-300 flex items-center justify-center text-neutral-900">
+            <div className="p-6 sm:p-8 border border-neutral-200 bg-white space-y-4 text-center shadow-2xs">
+              <div className="w-10 h-10 rounded-full bg-neutral-100 border border-neutral-300 flex items-center justify-center mx-auto text-neutral-900">
                 <Server className="w-5 h-5 stroke-[1.8]" />
               </div>
               <h3 className="text-base sm:text-lg font-semibold text-neutral-900">
@@ -74,8 +75,8 @@ export default function SecurityPage() {
               </p>
             </div>
 
-            <div className="p-6 sm:p-8 border border-neutral-200 bg-white space-y-4 shadow-2xs">
-              <div className="w-10 h-10 rounded-full bg-neutral-100 border border-neutral-300 flex items-center justify-center text-neutral-900">
+            <div className="p-6 sm:p-8 border border-neutral-200 bg-white space-y-4 text-center shadow-2xs">
+              <div className="w-10 h-10 rounded-full bg-neutral-100 border border-neutral-300 flex items-center justify-center mx-auto text-neutral-900">
                 <Key className="w-5 h-5 stroke-[1.8]" />
               </div>
               <h3 className="text-base sm:text-lg font-semibold text-neutral-900">
@@ -86,12 +87,12 @@ export default function SecurityPage() {
               </p>
             </div>
 
-            <div className="p-6 sm:p-8 border border-neutral-200 bg-white space-y-4 shadow-2xs">
-              <div className="w-10 h-10 rounded-full bg-neutral-100 border border-neutral-300 flex items-center justify-center text-neutral-900">
+            <div className="p-6 sm:p-8 border border-neutral-200 bg-white space-y-4 text-center shadow-2xs">
+              <div className="w-10 h-10 rounded-full bg-neutral-100 border border-neutral-300 flex items-center justify-center mx-auto text-neutral-900">
                 <Cpu className="w-5 h-5 stroke-[1.8]" />
               </div>
               <h3 className="text-base sm:text-lg font-semibold text-neutral-900">
-                24/7 Automated Threat Monitoring
+                24/7 Threat Monitoring
               </h3>
               <p className="text-xs sm:text-sm font-normal text-neutral-600 leading-relaxed">
                 Continuous vulnerability scanning, automated dependency checks, and real-time anomaly detection across all agent API connectors.
@@ -100,11 +101,11 @@ export default function SecurityPage() {
 
           </div>
 
-          {/* Security Certifications List */}
-          <div className="p-8 bg-neutral-50 border border-neutral-200 space-y-6">
+          {/* Centered Security Guarantees Box (Cleaned, No Button) */}
+          <div className="p-8 sm:p-10 bg-neutral-50 border border-neutral-200 space-y-6 text-center">
             <h2 className="text-lg font-bold text-neutral-900">Enterprise Security Guarantees</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm text-neutral-700">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-neutral-700 max-w-2xl mx-auto text-left">
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>SOC-2 Type II Certified Annual Audits</span>
@@ -115,23 +116,20 @@ export default function SecurityPage() {
               </div>
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>Quarterly Independent Third-Party Pentests</span>
+                <span>Quarterly Independent Pentests</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>HIPAA & BAA Compliance Options Available</span>
+                <span>HIPAA & BAA Compliance Options</span>
               </div>
             </div>
+          </div>
 
-            <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">
-              <Link
-                href="/request-automation"
-                className="px-6 py-2.5 bg-black text-white text-xs font-medium hover:bg-neutral-800 transition-colors shadow-2xs inline-flex items-center gap-2"
-              >
-                <span>Request Full SOC-2 Audit Report</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
+          {/* Contact Section */}
+          <div className="text-center pt-4 space-y-2">
+            <h3 className="text-base font-bold text-neutral-900">Security Operations Desk</h3>
+            <p className="text-neutral-500 text-xs">For security questionnaires or vulnerability disclosures:</p>
+            <div className="text-neutral-900 font-semibold text-sm">security@digiscale.ai</div>
           </div>
 
         </div>
