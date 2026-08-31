@@ -32,12 +32,13 @@ export const Navbar: React.FC = () => {
     { name: 'Automations', href: '/automations' },
     { name: 'About', href: '/#about' },
     { name: 'Pricing', href: '/#pricing' },
-    { name: 'Blog', href: '/#blog' },
-    { name: 'Contact', href: '/#contact' },
+    { name: 'Contact', href: '/request-automation' },
   ];
 
-  // Smart Anchor Link Click Handler
+  // Smart Anchor & Page Link Click Handler
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    setMobileMenuOpen(false);
+
     if (href.startsWith('/#')) {
       const targetId = href.replace('/#', '');
       
@@ -54,8 +55,11 @@ export const Navbar: React.FC = () => {
         e.preventDefault();
         router.push(href);
       }
+    } else {
+      // Direct page navigation for /automations and /request-automation
+      e.preventDefault();
+      router.push(href);
     }
-    setMobileMenuOpen(false);
   };
 
   return (
@@ -89,7 +93,7 @@ export const Navbar: React.FC = () => {
             </span>
           </Link>
 
-          {/* Connected Menu Items with Hover Line & Instant Anchor Scroll */}
+          {/* Connected Menu Items with Hover Line & Instant Navigation */}
           <nav className="hidden md:flex items-center h-full divide-x divide-neutral-200">
             {navLinks.map((link) => (
               <Link
