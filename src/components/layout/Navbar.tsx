@@ -32,6 +32,7 @@ export const Navbar: React.FC = () => {
     { name: 'Automations', href: '/automations' },
     { name: 'About', href: '/#about' },
     { name: 'Pricing', href: '/#pricing' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/request-automation' },
   ];
 
@@ -56,7 +57,7 @@ export const Navbar: React.FC = () => {
         router.push(href);
       }
     } else {
-      // Direct page navigation for /automations and /request-automation
+      // Direct page navigation for /automations, /blog, /request-automation
       e.preventDefault();
       router.push(href);
     }
