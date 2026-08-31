@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { SunburstIcon } from '@/components/ui/SunburstIcon';
 import { RollingText } from '@/components/ui/RollingText';
@@ -11,6 +12,8 @@ export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   
+  const pathname = usePathname();
+  const router = useRouter();
   const { scrollY } = useScroll();
 
   // Instant & Smooth Auto-Hiding Navbar on ANY minor scroll down (>5px)
@@ -32,6 +35,28 @@ export const Navbar: React.FC = () => {
     { name: 'Blog', href: '/#blog' },
     { name: 'Contact', href: '/#contact' },
   ];
+
+  // Smart Anchor Link Click Handler
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('/#')) {
+      const targetId = href.replace('/#', '');
+      
+      // If currently on homepage, smooth scroll directly to target section
+      if (pathname === '/') {
+        e.preventDefault();
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          window.history.pushState(null, '', href);
+        }
+      } else {
+        // If on another page, navigate to homepage hash
+        e.preventDefault();
+        router.push(href);
+      }
+    }
+    setMobileMenuOpen(false);
+  };
 
   return (
     <motion.header 
@@ -64,12 +89,13 @@ export const Navbar: React.FC = () => {
             </span>
           </Link>
 
-          {/* Connected Menu Items with Hover Line & Black Text Transition */}
+          {/* Connected Menu Items with Hover Line & Instant Anchor Scroll */}
           <nav className="hidden md:flex items-center h-full divide-x divide-neutral-200">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="group relative px-7 h-full flex items-center text-sm font-normal text-neutral-600 hover:text-black transition-colors duration-200"
               >
                 <span>{link.name}</span>
@@ -80,7 +106,7 @@ export const Navbar: React.FC = () => {
           </nav>
         </div>
 
-        {/* Right Standalone CTA Button (Turns Solid White with Black Border on Hover) */}
+        {/* Right Standalone CTA Button */}
         <div className="hidden md:flex items-center pr-6">
           <Link
             href="/request-automation"
@@ -109,7 +135,7 @@ export const Navbar: React.FC = () => {
             <Link
               key={link.name}
               href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="block px-6 py-3.5 text-xs sm:text-sm font-medium text-neutral-800 hover:bg-neutral-50"
             >
               {link.name}

@@ -39,7 +39,7 @@ export const IntegrationsSection: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-white select-text">
+    <section id="integrations" className="w-full bg-white select-text scroll-mt-28">
       
       {/* Pattern Bar Divider Row */}
       <div className="max-w-[1340px] mx-auto py-1">

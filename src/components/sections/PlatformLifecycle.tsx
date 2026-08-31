@@ -28,7 +28,7 @@ export const PlatformLifecycle: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-white select-text">
+    <section id="platform" className="w-full bg-white select-text scroll-mt-28">
       
       {/* Pattern Bar Divider Row */}
       <div className="max-w-[1340px] mx-auto py-1">
@@ -48,32 +48,34 @@ export const PlatformLifecycle: React.FC = () => {
           </span>
         </div>
 
-        {/* Section Body Padding */}
-        <div className="pt-8 pb-10 px-6 sm:px-10">
+        {/* Section Content */}
+        <div className="pt-8 pb-10 px-6 sm:px-10 space-y-10">
           
-          {/* Split Header (Exact Runtime Section Heading Size: text-xl sm:text-2xl) */}
+          {/* Split Header */}
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
             <h2 className="text-xl sm:text-2xl font-normal sm:font-medium tracking-tight text-neutral-800 leading-snug max-w-xl">
-              One platform for the entire agent lifecycle.
+              An end-to-end process for enterprise AI deployment.
             </h2>
             <p className="text-sm font-normal text-neutral-500 max-w-xs leading-relaxed">
-              From first workflow audit to production deployment at scale no glue code, no stitched-together tools.
+              From initial workflow analysis to continuous production monitoring — our four-phase methodology delivers guaranteed ROI.
             </p>
           </div>
 
-          {/* 4 Connected Feature Cards Row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-neutral-200 divide-x divide-y lg:divide-y-0 divide-neutral-200 bg-white shadow-2xs">
-            {features.map((feature) => (
-              <div key={feature.title} className="p-8 sm:p-9 space-y-5 hover:bg-neutral-50/60 transition-colors">
-                <div className="h-8 flex items-center text-neutral-900">
-                  {feature.icon}
+          {/* 4 Connected Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-neutral-200 divide-y sm:divide-y-0 lg:divide-x divide-neutral-200 bg-white shadow-2xs">
+            {features.map((feat) => (
+              <div key={feat.title} className="p-8 sm:p-9 space-y-5 hover:bg-neutral-50/60 transition-colors text-left flex flex-col justify-between min-h-[220px]">
+                <div className="space-y-5">
+                  <div className="h-8 flex items-center justify-start text-neutral-900">
+                    {feat.icon}
+                  </div>
+                  <h3 className="text-lg font-medium text-neutral-900 tracking-tight">
+                    {feat.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm font-normal text-neutral-500 leading-relaxed">
+                    {feat.description}
+                  </p>
                 </div>
-                <h3 className="text-lg font-medium text-neutral-900 tracking-tight">
-                  {feature.title}
-                </h3>
-                <p className="text-xs sm:text-sm font-normal text-neutral-500 leading-relaxed">
-                  {feature.description}
-                </p>
               </div>
             ))}
           </div>

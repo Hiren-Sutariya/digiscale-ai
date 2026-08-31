@@ -23,7 +23,7 @@ export const ProblemStatement: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-white select-text">
+    <section id="problem" className="w-full bg-white select-text scroll-mt-28">
       
       {/* Pattern Bar Divider Row */}
       <div className="max-w-[1340px] mx-auto py-1">
@@ -73,7 +73,7 @@ export const ProblemStatement: React.FC = () => {
             ))}
           </div>
 
-          {/* Impact Note Row (Distinct Title & Non-Repeating Content) */}
+          {/* Impact Note Row */}
           <div className="p-6 sm:p-8 bg-neutral-50/70 border border-neutral-200/80 space-y-2.5">
             <div className="flex items-center gap-2 text-neutral-900 font-medium text-base sm:text-lg">
               <TrendingDown className="w-5 h-5 text-neutral-800 stroke-[1.8]" />

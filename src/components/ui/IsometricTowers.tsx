@@ -14,7 +14,7 @@ export const IsometricTowers: React.FC = () => {
   // Smooth scroll trigger offset
   const { scrollYProgress } = useScroll({
     target: paragraphRef,
-    offset: ['start 0.7', 'end 0.35'],
+    offset: ['start 0.8', 'end 0.35'],
   });
 
   // Paragraph Words Array with Highlight Flag for Key Terms
@@ -70,11 +70,11 @@ export const IsometricTowers: React.FC = () => {
   ];
 
   return (
-    <div id="about" className="relative w-full border-t border-neutral-200 bg-white">
+    <div id="about" className="relative w-full border-t border-neutral-200 bg-white scroll-mt-20 pt-20 sm:pt-24 pb-8 sm:pb-10">
       
-      {/* About Section Main Body (Only Paragraph and Metrics) */}
-      <div className="pt-10 sm:pt-12 pb-5 sm:pb-6 px-6 sm:px-12">
-        <div className="max-w-4xl mx-auto text-center space-y-4">
+      {/* About Section Main Body */}
+      <div className="px-6 sm:px-12">
+        <div className="max-w-4xl mx-auto text-center space-y-6">
           
           {/* Scroll-Driven Word Color Reveal Paragraph */}
           <p 
@@ -97,7 +97,7 @@ export const IsometricTowers: React.FC = () => {
           </p>
 
           {/* 3 Highlighted Metric Counters */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-neutral-100 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-neutral-100 max-w-2xl mx-auto">
             <div className="text-center">
               <div className="text-2xl sm:text-3xl font-bold text-neutral-900 tracking-tight">10x</div>
               <div className="text-xs text-neutral-500 font-normal mt-0.5">Faster Workflow Execution</div>
@@ -116,23 +116,23 @@ export const IsometricTowers: React.FC = () => {
       </div>
 
       {/* Bottom 2 Lines Enclosed Single 45-Degree Diagonal Pattern Row */}
-      <div className="h-10 w-full border-y border-neutral-200 bg-[repeating-linear-gradient(45deg,#0000001c_0,#0000001c_1.2px,transparent_0,transparent_5px)]" />
+      <div className="mt-8 h-10 w-full border-y border-neutral-200 bg-[repeating-linear-gradient(45deg,#0000001c_0,#0000001c_1.2px,transparent_0,transparent_5px)]" />
 
     </div>
   );
 };
 
-// WordSpan Component starting with soft readable neutral gray (#a3a3a3 / 0.55 opacity)
+// WordSpan Component starting with readable contrast
 const WordSpan: React.FC<{
   word: WordItem;
   progress: any;
   range: [number, number];
 }> = ({ word, progress, range }) => {
-  const opacity = useTransform(progress, range, [0.55, 1]);
+  const opacity = useTransform(progress, range, [0.75, 1]);
   
   const color = word.highlight
-    ? useTransform(progress, range, ['#a3a3a3', '#6366f1'])
-    : useTransform(progress, range, ['#a3a3a3', '#171717']);
+    ? useTransform(progress, range, ['#525252', '#6366f1'])
+    : useTransform(progress, range, ['#525252', '#171717']);
 
   return (
     <motion.span

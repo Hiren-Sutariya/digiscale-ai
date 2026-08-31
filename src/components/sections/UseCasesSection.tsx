@@ -4,9 +4,6 @@ import React, { useState } from 'react';
 import { 
   Check, 
   Search, 
-  Target, 
-  GitBranch, 
-  Plug, 
   FileText, 
   FileCheck,
   MessageSquare,
@@ -18,9 +15,6 @@ import {
   ListTodo, 
   Send,
   Sparkles,
-  Cpu,
-  Shield,
-  Zap
 } from 'lucide-react';
 
 export const UseCasesSection: React.FC = () => {
@@ -108,7 +102,7 @@ export const UseCasesSection: React.FC = () => {
   const current = tabData[activeTab];
 
   return (
-    <section className="w-full bg-white select-text">
+    <section id="use-cases" className="w-full bg-white select-text scroll-mt-28">
       
       {/* Pattern Bar Divider Row */}
       <div className="max-w-[1340px] mx-auto py-1">
@@ -136,10 +130,10 @@ export const UseCasesSection: React.FC = () => {
             Built for the real-world work your team actually does.
           </h2>
 
-          {/* Interactive 3-Column Seamless Grid Layout matching Image 1 100% */}
+          {/* Interactive 3-Column Seamless Grid Layout */}
           <div className="max-w-5xl mx-auto border border-neutral-200 bg-white shadow-2xs grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-neutral-200 min-h-[380px] sm:min-h-[400px]">
             
-            {/* Column 1: Left Sidebar Vertical Tabs matching Image 1 100% (Standard Tab Heights with Off-White Base) */}
+            {/* Column 1: Left Sidebar Vertical Tabs */}
             <div className="md:col-span-3 bg-[#F8F9FA] flex flex-col justify-start h-full">
               {(['Sales', 'Operations', 'Support', 'Research'] as const).map((tab) => (
                 <button
@@ -154,7 +148,6 @@ export const UseCasesSection: React.FC = () => {
                   {tab}
                 </button>
               ))}
-              {/* Remaining Vertical Space with Off-White Background matching Image 1 */}
               <div className="flex-1 bg-[#F8F9FA]" />
             </div>
 

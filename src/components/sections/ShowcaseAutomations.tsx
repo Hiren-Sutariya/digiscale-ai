@@ -11,7 +11,6 @@ import {
   RefreshCw, 
   PlusCircle, 
   Mail, 
-  Tag, 
   BarChart3, 
   Clock, 
   ArrowUpRight,
@@ -149,7 +148,7 @@ export const ShowcaseAutomations: React.FC = () => {
   const filtered = automations.filter((item) => item.category === activeFilter).slice(0, 6);
 
   return (
-    <section className="w-full bg-white select-text">
+    <section id="automations" className="w-full bg-white select-text scroll-mt-28">
       
       {/* Pattern Bar Divider Row */}
       <div className="max-w-[1340px] mx-auto py-1">
@@ -172,7 +171,7 @@ export const ShowcaseAutomations: React.FC = () => {
         {/* Section Content */}
         <div className="pt-8 pb-14 px-6 sm:px-10">
           
-          {/* Split Header (Left Heading + Right Sub-heading Placement, No Top Button) */}
+          {/* Split Header */}
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
             <h2 className="text-xl sm:text-2xl font-normal sm:font-medium tracking-tight text-neutral-800 leading-snug max-w-xl">
               Battle-tested automations catalog.
@@ -204,7 +203,7 @@ export const ShowcaseAutomations: React.FC = () => {
             ))}
           </div>
 
-          {/* Automations Showcase Grid (Max 6 Cards Clean Minimalist Cards) */}
+          {/* Automations Showcase Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((item) => (
               <Link 

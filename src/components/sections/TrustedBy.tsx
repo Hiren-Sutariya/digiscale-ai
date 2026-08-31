@@ -98,7 +98,7 @@ export const TrustedBy: React.FC = () => {
   const marqueeLogos = [...logos, ...logos, ...logos];
 
   return (
-    <section className="w-full bg-white select-text relative overflow-hidden">
+    <section id="about" className="w-full bg-white select-text relative overflow-hidden scroll-mt-28">
       
       {/* CSS style for continuous smooth marquee */}
       <style jsx global>{`

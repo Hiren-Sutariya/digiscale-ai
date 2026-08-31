@@ -3,6 +3,7 @@ import { Geist, Inter } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { ScrollToTop } from '@/components/utils/ScrollToTop';
 
 const geist = Geist({ 
   subsets: ['latin'],
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`scroll-smooth ${geist.variable} ${inter.variable}`}>
       <body className={`${geist.className} font-sans bg-white text-neutral-900 antialiased selection:bg-neutral-200 selection:text-neutral-900`}>
+        <ScrollToTop />
         <Navbar />
         {children}
         <Footer />
